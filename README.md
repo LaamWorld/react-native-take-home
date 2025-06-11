@@ -14,8 +14,8 @@ Thank you for taking the time to complete this exercise. You’ll build a **sma
 ## 2  Environment Setup (≤ 10 min)
 
 ```bash
-# 1 Clone your fork
-git clone <your‑fork>
+# 1 Clone repo
+git clone <repo-path>
 cd react-native-take-home
 
 # 2 Install app dependencies
