@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import OrderListPage from './pages/OrderListPage';
+import OrderDetailsPage from './pages/OrderDetailsPage';
+import DefaultLayout from './layouts/DefaultLayout';
+import { ROUTES } from './configs/constants';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+	return (
+		<Router>
+			<Routes>
+				<Route path={ROUTES.ROOT} element={<DefaultLayout />}>
+					{/* Redirect index "/" to "/orders"  with replace to prevent back button from going back to "/" */}
+					<Route index element={<Navigate to={ROUTES.LISTING} replace />} />
+
+					{/* Nested routes rendered inside <Outlet /> of DefaultLayout */}
+					<Route path={ROUTES.LISTING} element={<OrderListPage />} />
+					<Route path={ROUTES.DETAIL} element={<OrderDetailsPage />} />
+				</Route>
+			</Routes>
+		</Router>
+	);
+};
 
 export default App;
