@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import OrderListPage from './pages/OrderListPage';
-import OrderDetailsPage from './pages/OrderDetailsPage';
+import OrderListPage from './pages/OrderListPage/OrderListPage';
+import OrderDetailsPage from './pages/OrderDetailsPage/OrderDetailsPage';
 import DefaultLayout from './layouts/DefaultLayout';
 import { ROUTES } from './configs/constants';
 
