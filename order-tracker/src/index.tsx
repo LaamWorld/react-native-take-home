@@ -5,6 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { persistQueryClient } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
+import './index.css';
+import { theme } from './configs/theme';
+import { ThemeProvider } from '@mui/material/styles';
 
 const queryClient = new QueryClient();
 const persister = createSyncStoragePersister({ storage: window.localStorage });
@@ -14,7 +17,9 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
 	<React.StrictMode>
 		<QueryClientProvider client={queryClient}>
-			<App />
+			<ThemeProvider theme={theme}>
+				<App />
+			</ThemeProvider>
 		</QueryClientProvider>
 	</React.StrictMode>
 );
