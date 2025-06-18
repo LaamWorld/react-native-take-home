@@ -1,0 +1,67 @@
+{
+	"name": "order-tracker",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.0",
+		"@mui/icons-material": "^7.1.1",
+		"@mui/material": "^7.1.1",
+		"@tanstack/query-sync-storage-persister": "^5.80.7",
+		"@tanstack/react-query": "^5.80.7",
+		"@tanstack/react-query-persist-client": "^5.80.7",
+		"@testing-library/dom": "^10.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"@types/node": "^16.18.126",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@types/react-router-dom": "^5.3.3",
+		"axios": "^1.9.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"react-router-dom": "^7.6.2",
+		"react-scripts": "5.0.1",
+		"react-window": "^1.8.11",
+		"typescript": "^4.9.5",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start:frontend": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"start": "npm-run-all --parallel start:frontend mock-server",
+		"mock-server": "cd ../mock-order-api && npm run start"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
+		"@types/axios": "^0.14.4",
+		"@types/jest": "^29.5.14",
+		"@types/testing-library__react": "^10.2.0",
+		"npm-run-all": "^4.1.5"
+	},
+	"jest": {
+		"transformIgnorePatterns": [
+			"node_modules/(?!(axios|react-router-dom|@tanstack/react-query)/)"
+		]
+	}
+}
